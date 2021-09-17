@@ -1,0 +1,8 @@
+{
+  "car-types": {
+    "1": "Escort",
+    "2": "Focus",
+    "3": "GT",
+    "4": "Mustang"
+  }
+}

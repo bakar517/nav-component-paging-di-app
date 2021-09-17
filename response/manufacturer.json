@@ -1,0 +1,11 @@
+{
+  "page": 0,
+  "pageSize": 0,
+  "totalPageCount": 0,
+  "manufacturer": {
+    "1": "Volkswagen",
+    "2": "Ford Motor",
+    "3": "Audi",
+    "4": "BMW"
+  }
+}
