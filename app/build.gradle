@@ -1,0 +1,122 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.bakar.carinfo"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "com.bakar.carinfo.EspressoTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(path: ':baselib')
+    implementation project(path: ':networking')
+
+    def androidx_core = "1.6.0"
+    implementation "androidx.core:core-ktx:$androidx_core"
+
+    def appcompat = "1.3.1"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+
+    def material = "1.4.0"
+    implementation "com.google.android.material:material:$material"
+
+    def constraintLayout = "2.1.0"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    def coroutines = "1.5.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    def lifecycle_version = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    def paging_version = "3.0.1"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    def timber_version = "5.0.1"
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    def retrofit = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+
+    def moshi = "1.12.0"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
+
+    def dagger_version = "2.38.1"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+
+    def jUnit = "4.13.2"
+    testImplementation "junit:junit:$jUnit"
+
+    def mockK = "1.12.0"
+    testImplementation "io.mockk:mockk:$mockK"
+
+    def truth = "1.1.3"
+    testImplementation "com.google.truth:truth:$truth"
+
+    def coroutinesTest = "1.4.3"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTest"
+
+    def mockitio = "3.2.0"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockitio"
+    testImplementation "org.mockito:mockito-inline:$mockitio"
+
+    def testingCore = "1.1.1"
+    testImplementation "android.arch.core:core-testing:$testingCore"
+
+
+    def jUnitTestExt = "1.1.3"
+    androidTestImplementation "androidx.test.ext:junit:$jUnitTestExt"
+
+    def espresso = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+
+}

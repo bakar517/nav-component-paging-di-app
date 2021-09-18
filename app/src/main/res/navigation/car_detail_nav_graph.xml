@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/car_detail_nav_graph"
+    app:startDestination="@id/manufacturerFragment">
+
+
+    <fragment
+        android:id="@+id/manufacturerFragment"
+        android:name="com.bakar.carinfo.manufacturer.ManufacturerFragment"
+        android:label="ManufacturerFragment">
+
+        <action
+            android:id="@+id/action_go_to_car_model"
+            app:destination="@id/screen_car_model"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/screen_car_model"
+        android:name="com.bakar.carinfo.cartype.CarTypeFragment"
+        android:label="CarModelFragment">
+
+        <argument
+            android:name="manufacture_info"
+            app:argType="com.bakar.carinfo.cartype.ManufactureArgs"
+            app:nullable="false" />
+
+
+        <action
+            android:id="@+id/action_go_to_car_built_dates"
+            app:destination="@id/screen_car_built_dates"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/screen_car_built_dates"
+        android:name="com.bakar.carinfo.builtdate.CarBuiltDateFragment"
+        android:label="CarBuiltDateFragment">
+
+        <argument
+            android:name="car_type_info"
+            app:argType="com.bakar.carinfo.builtdate.CarTypeArgs"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_go_to_car_detail"
+            app:destination="@id/screen_car_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/screen_car_detail"
+        android:name="com.bakar.carinfo.detail.CarDetailFragment"
+        android:label="CarDetailFragment">
+
+        <argument
+            android:name="car_detail"
+            app:argType="com.bakar.carinfo.detail.CarDetailArgs"
+            app:nullable="false" />
+
+    </fragment>
+</navigation>
