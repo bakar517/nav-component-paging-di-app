@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Car Info</string>
+    <string name="choose_manufacturer">Choose Manufacturer</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="something_went_wrong_message">Something went wrong, try again</string>
+    <string name="retry">Retry</string>
+
+    <string name="choose_car_type">Choose Type</string>
+    <string name="manufacturer_colon">Manufacturer: </string>
+    <string name="search">Search</string>
+
+    <string name="choose_year">Choose Year</string>
+    <string name="car_type_colon">Type: </string>
+
+    <string name="detail">Detail</string>
+    <string name="year_colon">Year: </string>
+
+
+</resources>
